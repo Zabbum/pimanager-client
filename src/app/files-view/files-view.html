@@ -1,0 +1,49 @@
+@if (content) {
+  <!-- DIRS -->
+  <mat-card appearance="outlined">
+    <mat-card-header>
+      <mat-card-title>Directories</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="m-1 mt-4 flex flex-wrap gap-1">
+        @for (dir of content.dirs; track dir) {
+          <mat-card appearance="outlined">
+            <mat-card-header>
+              <mat-icon mat-card-avatar fontIcon="folder"></mat-icon>
+              <mat-card-title>{{ basename(dir) }}</mat-card-title>
+            </mat-card-header>
+            <mat-card-actions class="m-1">
+              <button matButton="filled">Enter</button>
+            </mat-card-actions>
+          </mat-card>
+        }
+      </div>
+    </mat-card-content>
+  </mat-card>
+
+  <br>
+
+  <!-- FILES -->
+  <mat-card appearance="outlined">
+    <mat-card-header>
+      <mat-card-title>Files</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="m-1 mt-4 flex flex-wrap gap-2">
+        @for (file of content.files; track file) {
+          <mat-card appearance="outlined">
+            <mat-card-header>
+              <mat-icon mat-card-avatar fontIcon="description"></mat-icon>
+              <mat-card-title>{{ basename(file) }}</mat-card-title>
+            </mat-card-header>
+            <mat-card-actions class="m-1">
+              <button matButton="filled" >Download</button>
+            </mat-card-actions>
+          </mat-card>
+        }
+      </div>
+    </mat-card-content>
+  </mat-card>
+}
+
+
